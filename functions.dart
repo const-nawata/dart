@@ -32,11 +32,37 @@ void main() {
     var result = '$name tells $msg';
 
     if(device != null){
-      result = '$result is $device';
+      result = '$result by $device';
     }
 
     return result;
   }
 
-  print(hello('Bob', 'good bye', 'Dart'));
+  print(hello('Bob', 'good bye'));
+  print(hello('Bob', 'good bye', 'Megaphone'));
+
+  // Parameters by default
+  String trueName({String name='Bob', bool correct=false}){
+    return correct ? 'Name is $name' : 'Wrong name';
+  }
+
+  print(trueName());
+  print(trueName(correct: true));
+  print(trueName(name: 'John', correct: true));
+
+
+  // Positional parameters by default. [] -> Means "optional"
+  String hello2(String name, String msg, [String device='Dudka']){
+    var result = '$name tells $msg';
+
+    if(device != null){
+      result = '$result by $device';
+    }
+
+    return result;
+  }
+
+  print(hello2('Bob', 'good bye'));
+  print(hello2('Bob', 'good bye', 'Megaphone'));
+
 }
