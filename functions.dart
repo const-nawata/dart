@@ -21,14 +21,14 @@ void main() {
   print(toup('codeandart'));
 
   // Named parameters. Use {}
-  String getModel({String? title, int value=0}){
+  String getModel({String title, int value=0}){
     return '$title - ${value + 10}';
   }
 
   print(getModel(title: 'Model', value: 22));
 
   // Positional parameters. [] -> Means "optional"
-  String hello(String name, String msg, [String? device]){
+  String hello(String name, String msg, [String device]){
     var result = '$name tells $msg';
 
     if(device != null){
