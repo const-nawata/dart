@@ -1,4 +1,4 @@
-// Function 21:43
+// Function 32:41
 
 void main() {
   void printValue(int value){
@@ -77,5 +77,35 @@ void main() {
   }
 
   createListAndMap();
+
+  // Closures
+  Function addFunction(num add){
+    return (num i) => add + i;
+  }
+
+  var add2 = addFunction(2);
+  var add4 = addFunction(4);
+
+  print(add2(3));
+  print(add4(3));
+
+  // Collections
+
+  var list = [1,2,3];
+
+  List<int> values = [1,2,3,4,5,6,7,8];
+  values.add(9);
+  values.remove(3);
+
+  print('$values - ${values.length}');
+
+  List<int> constantList = const [1,2,3,4,5];
+
+  // constantList.add(8); // Error
+
+
+  var list1 = [1,2,3];
+  var list2 = [4, ...list1];
+  print('$list2 - ${list2.length}');
 
 }
