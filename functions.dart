@@ -108,4 +108,130 @@ void main() {
   var list2 = [4, ...list1];
   print('$list2 - ${list2.length}');
 
+//------------------------------------------------------------------------------
+  // Collections
+
+  //Lists - Arrays -----------------------
+
+  var list = [1,2,3];
+
+  List<int> values = [1,2,3,4,5,6,7,8];
+  values.add(9);
+  values.remove(3);
+
+  print('$values - ${values.length}');
+
+  List<int> constantList = const [1,2,3,4,5];
+
+  // constantList.add(8); // Error
+
+
+  // spread
+  var list1 = [1,2,3];
+  var list2 = [4, ...list1];
+  print('$list2 - ${list2.length}');
+
+  // spread-nullable
+  var nullableList;
+  var list3 = [1, ...?nullableList];
+  print(list3);
+
+// use "if"
+  bool permisson = false;
+  var nav = ['home', 'about', if(permisson) 'admin'];
+  print(nav);
+
+  // use "for"
+  List<int> intList = [1,2,4,5,6,7];
+  List<String> strList = ['>0', for(var i in intList) '>$i'];
+  print(strList);
+
+
+  // Sets -----------------------
+
+  var games = {'Game 1','Game 2','Game 3','Game 4','Game 5'};
+  var names = <String>{};
+//  Set <String> names2 = {};
+//  var names = {}; // Not stes! It is dictionaries.
+
+  games.add('Geme 6');
+  games.addAll({'Geme 7','Geme 8','Geme 9'});
+  print(games);
+
+  final constantGames = const {'Geme 7','Geme 8','Geme 9'};
+  // constantGames.add('Game 10'); // Error
+  // In the same way works "spread", "spread-nullable", "if" and "for" as in Lists
+
+  // Dictionaries or Map  -----------------------
+
+  Map<String, String> values = {
+    'k1': 'Val1',
+    'k2': 'Val2',
+    'k3': 'Val3'
+  };
+
+  var films = Map();
+  films[1] = 'Film A1';
+  films['a2'] = 'Film A2';
+  films['a3'] = 'Film A3';
+
+  var films2 = Map<String, String>();
+  films2['a1'] = 'Film A1';
+  films2['a2'] = 'Film A2';
+  films2['a3'] = 'Film A3';
+
+  final constMap1 = const {
+    1: 'One',
+    2: 'Two',
+    3: 'Three'
+  };
+
+
+  final constMap2 = const {
+    '1': 'One',
+    '2': 'Two',
+    '3': 'Three'
+  };
+
+  print(values);
+  print(films);
+  print(films2);
+  print(films.length);
+  print(constMap1);
+  print(constMap2);
+  // In the same way works "spread", "spread-nullable", "if" and "for" as in Lists
+
+
+  // Symbols
+
+  #mysymbol;
+
+
+//------------------------------------------------------------------------------
+// Conditional operators and Loops
+
+  print('hhhhhhhh' is String);
+  print('hhhhhhhh' is! String);
+  print('hhhhhhhh' is int);
+
+
+  var b;
+  var value = 11;
+  var c = b ?? 15;
+  print(b ??= value);
+  print(c);
+
+  var collbacks = [];
+
+  for( var i=0; i<2; i++){
+    collbacks.add(() => print(i));
+  }
+
+  collbacks.forEach((val) => val());
+  //        OR
+  collbacks.forEach((val){val();});
+
+  //The same "while"
+  //The same "switch" - not recommended: better to use "if...else if...else"
+
 }
