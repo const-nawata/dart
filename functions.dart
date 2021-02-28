@@ -1,4 +1,4 @@
-// Function 32:41
+// Function
 
 void main() {
   void printValue(int value){
