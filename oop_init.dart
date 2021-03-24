@@ -58,3 +58,26 @@ void main() {
 //  print(value);
 
 
+
+class Vector {
+  final int x, y;
+
+  Vector(this.x, this.y);
+
+  Vector operator +(Vector v){
+    return Vector(x+v.x, y+v.y);
+  }
+
+  Vector operator -(Vector v){
+    return Vector(x-v.x, y-v.y);
+  }
+}
+
+
+void main(){
+
+  Vector v1 = Vector(1,2);
+  Vector v2 = Vector(3,4);
+
+  print ('(${(v1+v2).x} --- ${(v1+v2).y} --- ${11+15}');
+}
