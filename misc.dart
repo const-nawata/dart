@@ -1,6 +1,8 @@
 //------------------------------------------------------------------------------
 //    Re-define operators. 38:53
 //------------------------------------------------------------------------------
+import 'dart:math';
+
 class Vector{
   final int x, y;
 
@@ -115,6 +117,8 @@ void main() {
   print(games is List<String>);
   print(gameSet);
 
+  var rng = new Random();
+  print(rng.nextInt(2));
 }
 
 //  print(value);
